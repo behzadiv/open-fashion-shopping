@@ -1,59 +1,167 @@
-.navbar{
-    background-color: var(--color-navbar);
-    width: 100%;
-    height: 60px;
+.navbar {
+  background-color: var(--color-navbar);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  padding: 1.4rem;
+  position: relative;
+}
+.navbar.hidden {
+  opacity: 0;
+}
+.navbar-icon {
+  width: 100%;
+  flex: 1;
+}
+.navbar-icon img {
+  width: 2.4rem;
+  cursor: pointer;
+}
+.navbar-logo {
+  width: 100%;
+  height: 100%;
+  flex: 10;
+}
+.navbar-logo img {
+  width: 7.8rem;
+  height: 3.2rem;
+}
+.menu-list {
+  background-color: var(--color-white);
+  padding: 1.7rem;
+  opacity: 0;
+  height: 10vh;
+  flex: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: start;
+  transition: all 300ms ease-in-out;
+  padding: 2.5rem;
+}
+.menu-list.show {
+  opacity: 1;
+  height: 100vh;
+}
+.menu-list-titles {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  opacity: 0.5;
+  letter-spacing: .3rem;
+}
+.title {
+  width: 100%;
+}
+.underline {
+  width: 90%;
+  margin-top: 1.5rem;
+  height: 2px;
+  background-color: #eee;
+  position: relative;
+}
+.selected {
+  position: relative;
+  width: 20%;
+  height: 2px;
+  background-color: #dd8560;
+  top: 0px;
+  left: 0%;
+}
+.selected span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #dd8560;
+  left: 45%;
+  transform: rotate(45deg);
+  top: -0.25rem;
+}
+
+.item-container{
+    margin-top: 3rem;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
     align-items: center;
-    padding:1.4rem;
-    position: relative;
+    flex-wrap: wrap;
+    width: 90%;
 }
-.navbar.hidden{
+.item-list{
+    width: 100%;
+}
+.arrowDown{
+    width: 2.4rem;
+    opacity: 50%;
+    transition: all 200ms ease-in-out;
+}
+.arrowDown.rotate{
+    transform:rotateX(180deg)
+}
+.item-list li{
+    font-size: 1.6rem;
+    line-height:4.5rem ;
+    padding: 0 2rem;
+    height: 0;
     opacity: 0;
 }
-.navbar-icon{
-    width: 100%;
-    flex:1;
-}
-.navbar-icon img{
-    width: 2.4rem;
-    cursor: pointer;
-}
-.navbar-logo{
-    width: 100%;
-    height: 100%;
-    flex: 10;
-}
-.navbar-logo img{
-    width: 7.8rem;
-    height: 3.2rem;
-}
-.menu-list{
-   background-color:var(--color-white);
-   padding:1.7rem ;
-   opacity: 0;
-   height: 10vh;
-   flex:   100%;
-   position: absolute;
-   width: 100%;
-   top: 0;
-   left: 0;
-   text-align: start;
-   transition: all 300ms ease-in-out;
-}
-.menu-list.show{
+.item-list.show li{
+    height: max-content;
     opacity: 1;
-    height: 100vh;
+    z-index: 1;
 }
-.menu-list-titles{
+
+.address-container{
     display: flex;
     justify-content: flex-start;
-    margin-top: 2rem;
-    padding-left: .5rem;
-    opacity: 0.5;
+    flex-direction: column;
+    margin-top: 5rem;
 }
-.title{
+.address-container img{
+    width:2.4rem ;
+}
+.call,.location{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+}
+.underline2 {
+    width: 12.5rem;
+    height: 1px;
+    background-color: #eee;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 2.7rem;
+  }
+  .selected2 {
+    position: relative;
     width: 100%;
-}
+    height: 1px;
+    background-color: rgba(85, 85, 85, 0.548);
+    top: 0px;
+    left: 0%;
+  }
+  .selected2 span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.397);
+    left: 45%;
+    transform: rotate(45deg);
+    top: -0.39rem;
+  }
+
+  .social{
+      margin-top: 3rem;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 3.5rem;
+  }
