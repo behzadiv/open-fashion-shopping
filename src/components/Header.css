@@ -52,7 +52,6 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 2rem;
-  opacity: 0.5;
   letter-spacing: .3rem;
 }
 .title {
@@ -72,6 +71,16 @@
   background-color: #dd8560;
   top: 0px;
   left: 0%;
+  transition: all 200ms ease-in-out;
+}
+.selected.women{
+    left: 0%;
+}
+.selected.man{
+    left: 34%;
+}
+.selected.kids{
+    left: 71%;
 }
 .selected span {
   position: absolute;
@@ -107,7 +116,7 @@
     line-height:4.5rem ;
     padding: 0 2rem;
     height: 0;
-    opacity: 0;
+    opacity: 0; 
 }
 .item-list.show li{
     height: max-content;

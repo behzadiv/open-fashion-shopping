@@ -22,6 +22,11 @@ const Header = () => {
       element.parentElement.childNodes[1].classList.toggle("rotate");
     }
   };
+  const selectCategory=(e)=>{
+    let className=e.target.innerText.toLowerCase()
+    document.querySelector(".selected").classList=["selected"]
+    document.querySelector(".selected").classList.add(className)
+  }
   return (
     <div className="navbar-container">
       <div className="navbar">
@@ -42,10 +47,10 @@ const Header = () => {
             <img src={close} alt="" onClick={() => openCloseMenu()} />
           </a>
           <div className="menu-list-titles-container">
-            <div className="menu-list-titles">
-              <h3 className="title">WOMEN</h3>
-              <h3 className="title">MAN</h3>
-              <h3 className="title">KIDS</h3>
+            <div className="menu-list-titles" >
+              <h3 className="title" onClick={(e)=>selectCategory(e)}>WOMEN</h3>
+              <h3 className="title" onClick={(e)=>selectCategory(e)}>MAN</h3>
+              <h3 className="title" onClick={(e)=>selectCategory(e)}>KIDS</h3>
             </div>
             <div className="underline">
               <div className="selected">
