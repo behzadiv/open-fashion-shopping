@@ -11,6 +11,7 @@ import call from "../assets/icons/Call.png";
 import twitter from "../assets/icons/Twitter.png";
 import youtube from "../assets/icons/YouTube.png";
 import instagram from "../assets/icons/Instagram.png";
+import Badge from "../common/Badge";
 const Header = () => {
   const openCloseMenu = () => {
     document.querySelector(".menu-list").classList.toggle("show");
@@ -153,11 +154,7 @@ const Header = () => {
               <h2>Store locator</h2>
             </div>
           </div>
-          <div className="underline2">
-            <div className="selected2">
-              <span></span>
-            </div>
-          </div>
+          <Badge/>
           <div className="social">
             <a>
               <img src={twitter} alt="" />

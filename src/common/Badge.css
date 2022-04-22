@@ -1,0 +1,25 @@
+.underline2 {
+    width: 12.5rem;
+    height: 1px;
+    background-color: #eee;
+    position: relative;
+    margin: 0 auto;
+  }
+  .selected2 {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(85, 85, 85, 0.548);
+    top: 0px;
+    left: 0%;
+  }
+  .selected2 span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.397);
+    left: 45%;
+    transform: rotate(45deg);
+    top: -0.39rem;
+  }

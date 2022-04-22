@@ -52,7 +52,7 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 2rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
 }
 .title {
   width: 100%;
@@ -73,14 +73,14 @@
   left: 0%;
   transition: all 200ms ease-in-out;
 }
-.selected.women{
-    left: 0%;
+.selected.women {
+  left: 0%;
 }
-.selected.man{
-    left: 34%;
+.selected.man {
+  left: 34%;
 }
-.selected.kids{
-    left: 71%;
+.selected.kids {
+  left: 71%;
 }
 .selected span {
   position: absolute;
@@ -92,85 +92,60 @@
   top: -0.25rem;
 }
 
-.item-container{
-    margin-top: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 90%;
+.item-container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
 }
-.item-list{
-    width: 100%;
+.item-list {
+  width: 100%;
 }
-.arrowDown{
-    width: 2.4rem;
-    opacity: 50%;
-    transition: all 200ms ease-in-out;
+.arrowDown {
+  width: 2.4rem;
+  opacity: 50%;
+  transition: all 200ms ease-in-out;
 }
-.arrowDown.rotate{
-    transform:rotateX(180deg)
+.arrowDown.rotate {
+  transform: rotateX(180deg);
 }
-.item-list li{
-    font-size: 1.6rem;
-    line-height:4.5rem ;
-    padding: 0 2rem;
-    height: 0;
-    opacity: 0; 
+.item-list li {
+  font-size: 1.6rem;
+  line-height: 4.5rem;
+  padding: 0 2rem;
+  height: 0;
+  opacity: 0;
 }
-.item-list.show li{
-    height: max-content;
-    opacity: 1;
-    z-index: 1;
+.item-list.show li {
+  height: max-content;
+  opacity: 1;
+  z-index: 1;
 }
 
-.address-container{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-top: 5rem;
+.address-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 5rem;
 }
-.address-container img{
-    width:2.4rem ;
+.address-container img {
+  width: 2.4rem;
+  margin-bottom: 1rem;
 }
-.call,.location{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 1.5rem;
+.call,
+.location {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
 }
-.underline2 {
-    width: 12.5rem;
-    height: 1px;
-    background-color: #eee;
-    position: relative;
-    margin: 0 auto;
-    margin-top: 2.7rem;
-  }
-  .selected2 {
-    position: relative;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(85, 85, 85, 0.548);
-    top: 0px;
-    left: 0%;
-  }
-  .selected2 span {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: #fff;
-    border: 1px solid rgba(51, 51, 51, 0.397);
-    left: 45%;
-    transform: rotate(45deg);
-    top: -0.39rem;
-  }
-
-  .social{
-      margin-top: 3rem;
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      gap: 3.5rem;
-  }
+.social {
+  margin-top: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 3.5rem;
+}
