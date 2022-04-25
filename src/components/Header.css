@@ -45,6 +45,7 @@
   padding: 2.5rem;
 }
 .menu-list.show {
+  z-index: 2;
   opacity: 1;
   height: 100vh;
 }

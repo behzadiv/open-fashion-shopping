@@ -58,3 +58,24 @@
   .product-price{
       color: red;
   }
+
+  /* brands */
+  .brands{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+  }
+  .brands span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .brands img{
+      width: 9rem;
+  }
