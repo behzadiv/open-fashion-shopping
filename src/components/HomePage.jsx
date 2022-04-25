@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Badge from "../common/Badge";
+import { getAllProductsData } from "./feature/allProducts/allProductSlice";
 import "./HomePage.css";
 
 const HomePage = () => {
-  const [data, setData] = useState([]);
+  const {data,loading,error} = useSelector(state=>state.allProducts)
+  const dispatch = useDispatch()
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setData(json));
+    dispatch(getAllProductsData())
   }, []);
   console.log(data[(0, 3)]);
-const selectCategory=()=>{
-
-}
+  const selectCategory = () => {};
+  if(loading)return <p>loading...</p>
+  if(error)return <p>rejected</p>
   return (
     <div className="homepage">
-        <h2 className="homepage-title">NEW ARRIVAL</h2>
-        <Badge/>
+      <h2 className="homepage-title">NEW ARRIVAL</h2>
+      <Badge />
       <div className="product-category">
         <h3 className="title" onClick={(e) => selectCategory(e)}>
           All
@@ -35,7 +36,7 @@ const selectCategory=()=>{
         </h3>
       </div>
       <div className="productList">
-        {data.slice(0, 4).map((product) => (
+        {data.slice(0,4).map((product) => (
           <div className="container">
             <div className="card">
               <img src={product.image} alt="" />
