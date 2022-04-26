@@ -1,0 +1,26 @@
+.open-fashion-app{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10rem;
+}
+.open-fashion-app-title{
+    letter-spacing: .3rem;
+    margin-bottom: .5rem;
+}
+.product-category{
+    margin:2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.product-category .category-title{
+    cursor: pointer;
+    opacity: .5;
+}
+.category-title.active{
+    opacity: 1;
+}
