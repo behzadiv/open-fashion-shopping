@@ -61,3 +61,7 @@ h4{
   min-height: 100vh;
   position: relative;
 }
+.container{
+  max-width: 400px;
+  margin: 0 auto;
+}

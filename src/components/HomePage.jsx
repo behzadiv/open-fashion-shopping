@@ -1,33 +1,51 @@
 import "./HomePage.css";
 import Badge from "../common/Badge";
 import ProductList from "./productList/ProductList";
+import { getAllProductsData } from "./feature/allProducts/allProductSlice";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Prada from "../assets/brands/Prada.png";
+import Burberry from "../assets/brands/Burberry.png";
+import Catier from "../assets/brands/Catier.png";
+import Gucci from "../assets/brands/Gucci.png";
+import Boss from "../assets/brands/Boss.png";
+import Tiffany from "../assets/brands/Tiffany.png";
+const HomePage = ({ category }) => {
+  const { data, loading, error } = useSelector((state) => state.allProducts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllProductsData(category));
+  }, [category]);
 
-const HomePage = () => {
-  const selectCategory = () => {};
-  
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>rejected</p>;
+
   return (
-    <div className="homepage">
-      <h2 className="homepage-title">NEW ARRIVAL</h2>
+    <div>
+      <ProductList data={data} />
       <Badge />
-      <div className="product-category">
-        <h3 className="title" onClick={(e) => selectCategory(e)}>
-          All
-        </h3>
-        <h3 className="title" onClick={(e) => selectCategory(e)}>
-          Apparel
-        </h3>
-        <h3 className="title" onClick={(e) => selectCategory(e)}>
-          Dress
-        </h3>
-        <h3 className="title" onClick={(e) => selectCategory(e)}>
-          Tshirt
-        </h3>
-        <h3 className="title" onClick={(e) => selectCategory(e)}>
-          Bag
-        </h3>
+      <div className="brands container">
+        <span>
+          <img src={Prada} alt="" />
+        </span>
+        <span>
+          <img src={Burberry} alt="" />
+        </span>
+        <span>
+          <img src={Boss} alt="" />
+        </span>
+        <span>
+          {" "}
+          <img src={Catier} alt="" />
+        </span>
+        <span>
+          <img src={Gucci} alt="" />
+        </span>
+        <span>
+          <img src={Tiffany} alt="" />
+        </span>
       </div>
-      <ProductList/>
-     
+      <Badge />
     </div>
   );
 };
