@@ -10,6 +10,7 @@ import Catier from "../assets/brands/Catier.png";
 import Gucci from "../assets/brands/Gucci.png";
 import Boss from "../assets/brands/Boss.png";
 import Tiffany from "../assets/brands/Tiffany.png";
+import Loading from "./loading/Loading";
 const HomePage = ({ category }) => {
   const { data, loading, error } = useSelector((state) => state.allProducts);
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const HomePage = ({ category }) => {
     dispatch(getAllProductsData(category));
   }, [category]);
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>rejected</p>;
 
   return (

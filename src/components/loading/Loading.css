@@ -1,0 +1,50 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  row-gap: 6rem;
+}
+.loading-card-container {
+  width: 16.5rem;
+  height: 26rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loading-card-img-container {
+  width: 16.5rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(51, 51, 51, 0.13);
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+}
+.loading-card-img {
+  background-color: #E7EAEF;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid rgba(51, 51, 51, 0.13);
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  animation: myAnim 900ms infinite;
+}
+.loading-card-title,
+.loading-card-price {
+  width: 80%;
+  height: 2rem;
+  background-color: #E7EAEF;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  border-radius: 0.5rem;
+  animation: myAnim 900ms infinite;
+}
+@keyframes myAnim {
+    from {background-color: #E7EAEF;}
+    to {background-color: #d6d6d6;}
+  }
