@@ -8,6 +8,7 @@
 }
 a{
   text-decoration: none;
+  color: var(--color-headings);
 }
 ul{
   list-style: none;
@@ -56,4 +57,7 @@ h4{
   color: var(--color-body);
 }
 
-
+.App{
+  min-height: 100vh;
+  position: relative;
+}
