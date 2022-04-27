@@ -5,9 +5,24 @@
     flex-wrap: wrap;
     gap: 2rem;
     row-gap: 6rem;
+    margin-bottom: 4rem;
 }
-.explore-more{
+.show{
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
+.show img{
+   display: flex;
+   width: 1.8rem;
+}
+.show.show-less{
+    flex-direction: row-reverse;
+}
+.show.show-less img{
+    transform: rotateY(180deg);
+ }
