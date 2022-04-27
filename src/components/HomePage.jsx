@@ -14,7 +14,7 @@ const HomePage = ({ category }) => {
   }, [category]);
 
   if (loading) return <Loading />;
-  if (error) return <p>rejected</p>;
+  if (error) return <p>{error.message}</p>;
 
   return <ProductList data={data} />
   ;

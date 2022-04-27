@@ -8,6 +8,7 @@ import Catier from "../../assets/brands/Catier.png";
 import Gucci from "../../assets/brands/Gucci.png";
 import Boss from "../../assets/brands/Boss.png";
 import Tiffany from "../../assets/brands/Tiffany.png";
+import JustForYou from "../justForYou/JustForYou";
 const OpenFashionApp = () => {
     const [category, setCategory] = useState("");
     const selectCategory = (e) => {
@@ -81,6 +82,7 @@ const OpenFashionApp = () => {
         </span>
       </div>
       <Badge />
+      <JustForYou/>
     </div>
   );
 };
