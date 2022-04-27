@@ -13,7 +13,7 @@ export const getAllProductsData = createAsyncThunk(
       const response = await axios.get(!category?`https://fakestoreapi.com/products`:`https://fakestoreapi.com/products/category/${category}`);
       return response.data;
     } catch (error) {
-      rejectWithValue([], error.message);
+     return rejectWithValue([], error.message);
     }
   }
 );
