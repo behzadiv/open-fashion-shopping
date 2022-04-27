@@ -4,10 +4,10 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    row-gap: 6rem;
+    row-gap: 3rem;
     margin-bottom: 4rem;
 }
-.show{
+.showProduct{
     text-align: center;
     margin: 4rem 0;
     cursor: pointer;
@@ -16,13 +16,13 @@
     justify-content: center;
     gap: 1rem;
 }
-.show img{
+.showProduct img{
    display: flex;
    width: 1.8rem;
 }
-.show.show-less{
+.showProduct.showProduct-less{
     flex-direction: row-reverse;
 }
-.show.show-less img{
+.showProduct.showProduct-less img{
     transform: rotateY(180deg);
  }

@@ -32,7 +32,7 @@ const ProductList = ({ data }) => {
   return (
     <section>
       {renderProductList()}
-      <div className={!moreProduct? "show show-more":"show show-less"}  onClick={() => setMoreProduct(!moreProduct ? true : false)}>
+      <div className={!moreProduct? "showProduct showProduct-more":"showProduct showProduct-less"}  onClick={() => setMoreProduct(!moreProduct ? true : false)}>
         <h2>
           {!moreProduct ? "Explore More" : "Less"}
         </h2>
