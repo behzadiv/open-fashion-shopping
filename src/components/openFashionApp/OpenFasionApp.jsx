@@ -2,6 +2,12 @@ import { useState } from "react";
 import Badge from "../../common/Badge";
 import HomePage from "../HomePage";
 import "./OpenFashionApp.css"
+import Prada from "../../assets/brands/Prada.png";
+import Burberry from "../../assets/brands/Burberry.png";
+import Catier from "../../assets/brands/Catier.png";
+import Gucci from "../../assets/brands/Gucci.png";
+import Boss from "../../assets/brands/Boss.png";
+import Tiffany from "../../assets/brands/Tiffany.png";
 const OpenFashionApp = () => {
     const [category, setCategory] = useState("");
     const selectCategory = (e) => {
@@ -52,6 +58,29 @@ const OpenFashionApp = () => {
         </h3>
       </div>
       <HomePage category={category}/>
+      <Badge />
+      <div className="brands container">
+        <span>
+          <img src={Prada} alt="" />
+        </span>
+        <span>
+          <img src={Burberry} alt="" />
+        </span>
+        <span>
+          <img src={Boss} alt="" />
+        </span>
+        <span>
+          {" "}
+          <img src={Catier} alt="" />
+        </span>
+        <span>
+          <img src={Gucci} alt="" />
+        </span>
+        <span>
+          <img src={Tiffany} alt="" />
+        </span>
+      </div>
+      <Badge />
     </div>
   );
 };

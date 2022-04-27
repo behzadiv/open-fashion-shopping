@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   row-gap: 6rem;
+  margin-bottom: 3rem;
 }
 .loading-card-container {
   width: 16.5rem;
