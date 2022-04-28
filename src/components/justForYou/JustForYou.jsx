@@ -22,11 +22,12 @@ const JustForYou = () => {
       <div className="justforyou">
         {data.slice(14,19).map((product) => {
           return (
-            <Product
+              <Product
               key={product.id}
               productImage={product.image}
               productTitle={product.title}
               productPrice={product.price}
+              productId={product.id}
             />
           );
         })}

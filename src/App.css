@@ -66,3 +66,17 @@ h4{
   margin: 4rem auto;
   overflow:hidden;
 }
+.btn{
+  border: 0;
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  width: 100%;
+}
+.btn-primary{
+  background-color: #007bff;
+  color: #fff;
+  transition: all .15s ease-in-out;
+}
+.btn-primary:hover{
+  background-color: #0473ea;
+}
