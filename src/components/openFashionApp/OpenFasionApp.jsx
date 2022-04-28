@@ -44,18 +44,23 @@ const OpenFashionApp = () => {
       <div className="product-category">
         <h3 className="category-title active" id="all"onClick={(e) => selectCategory(e)}>
           All
+          <span></span>
         </h3>
         <h3 className="category-title" id="man" onClick={(e) => selectCategory(e)}>
           Man
+          <span></span>
         </h3>
         <h3 className="category-title" id="women" onClick={(e) => selectCategory(e)}>
           Women
+          <span></span>
         </h3>
         <h3 className="category-title" id="jewelery" onClick={(e) => selectCategory(e)}>
           Jewelery
+          <span></span>
         </h3>
         <h3 className="category-title" id="electronics" onClick={(e) => selectCategory(e)}>
           Electronics
+          <span></span>
         </h3>
       </div>
       <HomePage category={category}/>

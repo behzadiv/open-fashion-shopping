@@ -20,9 +20,28 @@
 .product-category .category-title{
     cursor: pointer;
     opacity: .5;
+    transition: all .2s ease-in-out;
 }
 .category-title.active{
     opacity: 1;
+}
+.category-title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.category-title span{
+    position: absolute;
+    width: .5rem;
+    height: .5rem;
+    background-color: red;
+    transform: rotate(-225deg);
+    bottom: -.7rem;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+.category-title.active span{
+opacity: 1;
 }
  /* brands */
  .brands{
