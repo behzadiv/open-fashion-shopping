@@ -15,6 +15,8 @@ import Badge from "../common/Badge";
 const Header = () => {
   const openCloseMenu = () => {
     document.querySelector(".menu-list").classList.toggle("show");
+    // when opened menu add this class to disable scrolling
+    document.getElementById("root").classList.toggle("fixed-position")
   };
   const dropDown = (e) => {
     if (e.target.classList.value !== "item-container") {
@@ -43,6 +45,7 @@ const Header = () => {
         <a className="navbar-icon">
           <img src={shoppingBag} alt="" />
         </a>
+      </div>
         <div className="menu-list">
           <a className="navbar-icon">
             <img src={close} alt="" onClick={() => openCloseMenu()} />
@@ -167,7 +170,6 @@ const Header = () => {
             </a>
           </div>
         </div>
-      </div>
     </div>
   );
 };

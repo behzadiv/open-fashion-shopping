@@ -67,6 +67,7 @@ h4{
   overflow:hidden;
 }
 .btn{
+  cursor: pointer;
   border: 0;
   padding: 1rem 2rem;
   border-radius: .5rem;
