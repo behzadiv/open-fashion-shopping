@@ -39,7 +39,7 @@ const OpenFashionApp = () => {
       };
   return (
     <div className="open-fashion-app container">
-      <h2 className="open-fashion-app-title">NEW ARRIVAL</h2>
+      <h1 className="open-fashion-app-title">NEW ARRIVAL</h1>
       <Badge />
       <div className="product-category">
         <h3 className="category-title active" id="all"onClick={(e) => selectCategory(e)}>
