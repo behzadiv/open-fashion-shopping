@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Badge from "../../common/Badge";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
+import { addToCarts } from "../feature/cart/cartsSlice";
 import { getJustForYou } from "../feature/justForYou/justForYouSlice";
 import Loading from "../loading/Loading";
 import Product from "../product/Product";
@@ -12,7 +13,13 @@ const JustForYou = () => {
   useEffect(() => {
     dispatch(getJustForYou());
   }, []);
-
+  const addProduct =(id)=>{
+    console.log(id);
+    let selectedId= Number(id)
+    const myProduct =data.filter((product)=>product.id === selectedId)
+    //pass as object
+    dispatch(addToCarts(myProduct[0]))
+  }
   if (loading) return <Loading />;
   if (error) return <p>{error.message}</p>;
   return (
@@ -28,6 +35,7 @@ const JustForYou = () => {
               productTitle={product.title}
               productPrice={product.price}
               productId={product.id}
+              addProduct={()=>addProduct(product.id)}
             />
           );
         })}
