@@ -9,7 +9,7 @@ const ProductList = ({ data }) => {
   const dispatch = useDispatch()
   const addProduct = (id)=>{
     console.log(id);
-    let selectedId= Number(id.productId)
+    let selectedId= Number(id)
     const myProduct =data.filter((product)=>product.id === selectedId)
     //pass as object
     dispatch(addToCarts(myProduct[0]))
