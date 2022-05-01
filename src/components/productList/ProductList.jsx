@@ -37,7 +37,7 @@ const ProductList = ({ data }) => {
                 productTitle={product.title}
                 productPrice={product.price}
                 productId = {product.id}
-                addProduct={(e)=>addProduct(e)}
+                addProduct={()=>addProduct(product.id)}
               />
             ))}
       </div>
