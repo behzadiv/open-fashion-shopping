@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { matchRoutes, NavLink, useLocation } from "react-router-dom";
 import Badge from "../../common/Badge";
-import "./CartPage.css";
+import "./Checkout.css";
 import voucher from "../../assets/icons/Voucher.png";
 import shoppingBag from "../../assets/icons/shoppingBag2.png";
 import delivery from "../../assets/icons/Door to Door Delivery.png";
 import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
-const CartPage = () => {
+const Checkout = () => {
   const { carts, total } = useSelector((state) => state.carts);
   const dispatch = useDispatch();
   //console.log(carts.carts);
@@ -15,6 +14,12 @@ const CartPage = () => {
       <div className="checkout-container">
         <h1 className="checkout-title">CHECKOUT</h1>
         <Badge />
+        <div className="checkout-info">
+            <h2>Irish Watson</h2>
+            <p>606-3227 Ullamcorper.Street</p>
+            <p>irish-watson@gmail.com</p>
+        </div>
+            <span className="checkout-border"></span>
         <div className="checkout-body">
           {carts.map((item) => {
             return (
@@ -58,7 +63,7 @@ const CartPage = () => {
             <span>
               <img src={shoppingBag} alt="" />
             </span>
-            <p>CHECKOUT</p>
+            <p>PAY BY CREDIT CARD</p>
           </button>
         </div>
       </div>
@@ -67,4 +72,4 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+export default Checkout;

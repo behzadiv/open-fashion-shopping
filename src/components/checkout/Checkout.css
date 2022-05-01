@@ -1,13 +1,26 @@
 .checkout-container {
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 1.5rem;
   z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-
+.checkout-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 0.5rem;
+  margin-top: 1rem;
+  padding: .7rem 0;
+}
+.checkout-info p {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
 .checkout-body {
   margin: 2rem 0;
   width: 100%;
@@ -20,7 +33,7 @@
 .checkout-body::-webkit-scrollbar {
   display: none;
 }
-.checkout-item{
+.checkout-item {
   width: 100%;
   display: flex;
   flex: 1;
@@ -86,7 +99,7 @@
   border-radius: 0.5rem;
   padding: 0.7rem 0;
   position: relative;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
   cursor: pointer;
   outline: none;
 }
@@ -114,33 +127,33 @@
   background-color: #000;
   opacity: 0.1;
 }
-.checkout-summery{
+.checkout-summery {
   display: flex;
   flex-direction: column;
   position: fixed;
   bottom: 0;
 }
-.checkout-total{
+.checkout-total {
   width: 100%;
-  padding:1rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.checkout-total-price{
+.checkout-total-price {
   font-size: 1.6rem;
   font-weight: 400;
-  color:#DD8560;
+  color: #dd8560;
 }
-.checkout-btn{
- display: flex;
+.checkout-btn {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   width: 100vw;
   border-radius: 0;
 }
-.checkout-btn p{
+.checkout-btn p {
   font-family: "tenor";
   font-size: 1.6rem;
   font-weight: 400;
@@ -152,5 +165,3 @@
     background-color: rgb(255, 40, 40);
     color: #fff;
 } */
-
-
