@@ -18,9 +18,10 @@
   width: 100%;
   margin: 2rem 0;
   width: 100%;
-  height: 50vh;
+  max-height: 50vh;
   overflow-y: scroll;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   row-gap: 1rem;
 }
@@ -46,6 +47,12 @@
     font-weight: 400;
     color: #dd8560;
   }
+  .cart-tax-messeage{
+      font-size: 1.4rem;
+      color: #888888;
+      line-height: 2.4rem;
+      font-weight: 400;
+  }
 .cart-btn {
   display: flex;
   justify-content: center;
@@ -57,4 +64,14 @@
   bottom: 0;
   font-size: 1.5rem;
   line-height: 2.6rem;
+}
+.cart-empty{
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: #888888;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

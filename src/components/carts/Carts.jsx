@@ -6,23 +6,17 @@ import {
   decrementCart,
 } from "../../components/feature/cart/cartsSlice";
 import "./Carts.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 const Carts = () => {
+  const navigate =useNavigate() 
   const { total, carts } = useSelector((state) => state.carts);
   const dispatch = useDispatch();
-  return (
-    <section className="container">
-      <div className="carts-container">
-        <div className="carts-header">
-          <NavLink to="/">
-            <img src={close} alt="" />
-          </NavLink>
-          <h1>CARTS</h1>
-        </div>
+  const renderCarts = ()=>{
+    return <>
         <div className="carts-body">
           {carts.map((item) => {
             return (
-              <div className="checkout-item">
+              <div className="checkout-item" key={item.id}>
                 <img src={item.image} alt="" />
                 <div className="checkout-item-desc">
                   <h3>{item.title}</h3>
@@ -39,17 +33,32 @@ const Carts = () => {
               </div>
             );
           })}
-        </div>
         <span className="carts-border"></span>
+        </div>
         <div className="carts-total">
           <h1>SUB.TOTAL</h1>
           <span className="carts-total-price">${total.toFixed(2)}</span>
         </div>
-        <NavLink to="/checkout" className="btn btn-primary cart-btn">
+        <div>
+            <p className="cart-tax-messeage">*shipping charges, taxes and discount codes are calculated at the time of accounting.</p>
+        </div>
+    </>
+  }
+  return (
+    <section className="container">
+      <div className="carts-container">
+        <div className="carts-header">
+          <span onClick={()=>navigate(-1)}> {/*push previous route  */}
+            <img src={close} alt="" />
+          </span>
+          <h1>CARTS</h1>
+        </div>
+        {carts.length>0? renderCarts() : <p className="cart-empty">You have no items in your Shopping Bag</p>}
+        <NavLink to={carts.length? "/checkout" : "/"} className="btn btn-primary cart-btn">
           <span>
             <img src={shoppingBag} alt="" />
           </span>
-          <p>CHECKOUT</p>
+          <p>{carts.length ? "CHECKOUT" : "CONTINUE SHOPPING"}</p>
         </NavLink>
       </div>
     </section>
