@@ -27,19 +27,18 @@ export const cartsSlice = createSlice({
       };
     },
     decrementCart:(state,action)=>{
-      const updatedCarts = [...state.carts]
+     const updatedCarts = [...state.carts]
      const updatedItemIndex =  updatedCarts.findIndex((c)=>c.id ===action.payload.id)
      const selectedCart = {...updatedCarts[updatedItemIndex]}
-     console.log(action.payload.quantity);
      if(action.payload.quantity > 1){
-       console.log(selectedCart,"ghgh");
-        selectedCart.quantity--
-        updatedCarts[updatedItemIndex] =selectedCart
+       selectedCart.quantity--
+       updatedCarts[updatedItemIndex] =selectedCart
+      }
+      else{
+       console.log(selectedCart,updatedCarts);
+        updatedCarts.splice(updatedItemIndex,1)
      }
-     else{
-        updatedCarts.splice(updatedItemIndex)
-     }
-     return{...state ,carts:updatedCarts,total:state.total-action.payload.price}
+     return{...state,carts:updatedCarts,total:state.total-action.payload.price}
     }
   },
 });
