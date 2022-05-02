@@ -159,3 +159,23 @@
   position: fixed;
   width: 100%;
 }
+
+/* shopping bag  */
+
+.navbar-icon.shoppingBag {
+  position: relative;
+}
+.carts-qty{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #dd8560;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

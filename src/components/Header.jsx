@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../assets/Logo.png";
 import menu from "../assets/icons/Menu.png";
@@ -13,6 +13,7 @@ import youtube from "../assets/icons/YouTube.png";
 import instagram from "../assets/icons/Instagram.png";
 import Badge from "../common/Badge";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
   const openCloseMenu = () => {
     document.querySelector(".menu-list").classList.toggle("show");
@@ -31,6 +32,7 @@ const Header = () => {
     document.querySelector(".selected").classList = ["selected"];
     document.querySelector(".selected").classList.add(className);
   };
+  const { carts } = useSelector((state) => state.carts);
   return (
     <div className="navbar-container">
       <div className="navbar">
@@ -45,9 +47,12 @@ const Header = () => {
         <span className="navbar-icon">
           <img src={search} alt="" />
         </span>
-        <span className="navbar-icon">
+        <span className="navbar-icon shoppingBag" >
           <NavLink to="/carts">
-            <img src={shoppingBag} alt="" />
+            <img src={shoppingBag} alt=""  />
+            <span className="carts-qty">
+              {carts.length ? carts.length : null}
+            </span>
           </NavLink>
         </span>
       </div>
