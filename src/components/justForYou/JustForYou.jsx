@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Badge from "../../common/Badge";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
@@ -9,9 +9,13 @@ import Product from "../product/Product";
 import "./JustForYou.css"
 const JustForYou = () => {
   const { data, loading, error } = useSelector((state) => state.justForYou);
+ const[randomInt,setRandomInt]= useState()
   const dispatch = useDispatch();
+  console.log(randomInt);
   useEffect(() => {
     dispatch(getJustForYou());
+    setRandomInt(Math.floor(Math.random()*15))
+
   }, []);
   const addProduct =(id)=>{
     console.log(id);
@@ -23,11 +27,11 @@ const JustForYou = () => {
   if (loading) return <Loading />;
   if (error) return <p>{error.message}</p>;
   return (
-    <section className="justforyou-container container">
+    <section className="justforyou-container">
       <h1>JUST FOR YOU</h1>
       <Badge/>
       <div className="justforyou">
-        {data.slice(14,19).map((product) => {
+        {data.slice(randomInt,randomInt+5).map((product) => {
           return (
               <Product
               key={product.id}
