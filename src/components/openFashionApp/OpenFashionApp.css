@@ -177,3 +177,46 @@
   text-align: center;
   letter-spacing: 0.01em;
 }
+
+/* store-details */
+
+.store-detail {
+  width: 100%;
+  background-color: #f2f2f2;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0;
+  row-gap: 2rem;
+  margin-top: 2rem;
+}
+.store-detail-desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #555555;
+  width: 80%;
+  opacity: 0.5;
+}
+.store-detail-sticker-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  row-gap: 2rem;
+}
+.store-detail-sticker {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+.store-detail-sticker span {
+  width: 80%;
+  text-align: center;
+}

@@ -10,6 +10,12 @@ import Boss from "../../assets/brands/Boss.png";
 import Tiffany from "../../assets/brands/Tiffany.png";
 import JustForYou from "../justForYou/JustForYou";
 import collection1 from "../../assets/collection1.png";
+import sticker1 from "../../assets/MiroodlesSticker1.png";
+import sticker2 from "../../assets/MiroodlesSticker2.png";
+import sticker3 from "../../assets/MiroodlesSticker3.png";
+import sticker4 from "../../assets/MiroodlesSticker4.png";
+import sticker5 from "../../assets/MiroodlesSticker5.png";
+import logo from "../../assets/Logo.png";
 const OpenFashionApp = () => {
   const [category, setCategory] = useState("");
   const selectCategory = (e) => {
@@ -42,7 +48,7 @@ const OpenFashionApp = () => {
   };
   return (
     <div className="open-fashion-app container">
-      <div className="cover-container">
+      <section className="cover-container">
         <p className="cover-text">
           <span>LUXURY</span>
           <span>FASHION</span>
@@ -51,10 +57,10 @@ const OpenFashionApp = () => {
         <div className="cover-link">
           <h1>EXPLORE COLLECTION</h1>
         </div>
-      </div>
+      </section>
       <h1 className="open-fashion-app-title">NEW ARRIVAL</h1>
       <Badge />
-      <div className="product-category">
+      <section className="product-category">
         <h3
           className="category-title active"
           id="all"
@@ -95,10 +101,10 @@ const OpenFashionApp = () => {
           Electronics
           <span></span>
         </h3>
-      </div>
+      </section>
       <HomePage category={category} />
       <Badge />
-      <div className="brands">
+      <section className="brands">
         <span>
           <img src={Prada} alt="" />
         </span>
@@ -118,18 +124,18 @@ const OpenFashionApp = () => {
         <span>
           <img src={Tiffany} alt="" />
         </span>
-      </div>
+      </section>
       <Badge />
-      <div className="collections">
+      <section className="collections">
         <h1>COLLECTIONS</h1>
         <img src={collection1} alt="" />
         <div className="collection-autumn">
           <span>Autumn</span>
           <span>COLLECTION</span>
         </div>
-      </div>
+      </section>
       <JustForYou />
-      <div className="trending">
+      <section className="trending">
         <h1>@TRENDING</h1>
         <div className="trending-hashtags">
           <span>#2022</span>
@@ -140,7 +146,34 @@ const OpenFashionApp = () => {
           <span>#autumncollection</span>
           <span>#openfashion</span>
         </div>
-      </div>
+      </section>
+      <section className="store-detail">
+        <img src={logo} alt="" />
+        <p className="store-detail-desc">
+          Making a luxurious lifestyle accessible for a generous group of women
+          is our daily drive.
+        </p>
+        <Badge />
+        <div className="store-detail-sticker-container">
+          <div className="store-detail-sticker">
+            <img src={sticker1} alt="" />
+            <span>Fast shipping. Free on orders over $25.</span>
+          </div>
+          <div className="store-detail-sticker">
+            <img src={sticker2} alt="" />
+            <span>Sustainable process from start to finish.</span>
+          </div>
+          <div className="store-detail-sticker">
+            <img src={sticker3} alt="" />
+            <span>Unique designs and high-quality materials.</span>
+          </div>
+          <div className="store-detail-sticker">
+            <img src={sticker4} alt="" />
+            <span>Fast shipping. Free on orders over $25.</span>
+          </div>
+        </div>
+        <img src={sticker5} alt="" />
+      </section>
     </div>
   );
 };
