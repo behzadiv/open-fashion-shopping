@@ -9,6 +9,7 @@ import Gucci from "../../assets/brands/Gucci.png";
 import Boss from "../../assets/brands/Boss.png";
 import Tiffany from "../../assets/brands/Tiffany.png";
 import JustForYou from "../justForYou/JustForYou";
+import cover from "../../assets/cover.png"
 const OpenFashionApp = () => {
     const [category, setCategory] = useState("");
     const selectCategory = (e) => {
@@ -39,6 +40,10 @@ const OpenFashionApp = () => {
       };
   return (
     <div className="open-fashion-app container">
+      <div className="cover-container">
+        <p className="cover-text"><span>LUXURY</span><span>FASHION</span><span>&ACCESSORIES</span></p>
+        <div className="cover-link"><h1>EXPLORE COLLECTION</h1></div>
+      </div>
       <h1 className="open-fashion-app-title">NEW ARRIVAL</h1>
       <Badge />
       <div className="product-category">
