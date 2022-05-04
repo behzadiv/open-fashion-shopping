@@ -123,10 +123,24 @@ const OpenFashionApp = () => {
       <div className="collections">
         <h1>COLLECTIONS</h1>
         <img src={collection1} alt="" />
-        <div className="collection-autumn"><span>Autumn</span>
-        <span>COLLECTION</span></div>
+        <div className="collection-autumn">
+          <span>Autumn</span>
+          <span>COLLECTION</span>
+        </div>
       </div>
       <JustForYou />
+      <div className="trending">
+        <h1>@TRENDING</h1>
+        <div className="trending-hashtags">
+          <span>#2022</span>
+          <span>#spring</span>
+          <span>#collection</span>
+          <span>#fall</span>
+          <span>#dress</span>
+          <span>#autumncollection</span>
+          <span>#openfashion</span>
+        </div>
+      </div>
     </div>
   );
 };
