@@ -15,6 +15,11 @@ import sticker2 from "../../assets/MiroodlesSticker2.png";
 import sticker3 from "../../assets/MiroodlesSticker3.png";
 import sticker4 from "../../assets/MiroodlesSticker4.png";
 import sticker5 from "../../assets/MiroodlesSticker5.png";
+import group1 from "../../assets/group/group1.png";
+import group2 from "../../assets/group/group2.png";
+import group3 from "../../assets/group/group3.png";
+import group4 from "../../assets/group/group4.png";
+import groupinstagramlogo from "../../assets/group/groupInstagram.png";
 import logo from "../../assets/Logo.png";
 const OpenFashionApp = () => {
   const [category, setCategory] = useState("");
@@ -173,6 +178,16 @@ const OpenFashionApp = () => {
           </div>
         </div>
         <img src={sticker5} alt="" />
+      </section>
+      <section className="group-container">
+        <h1>FOLLOW US</h1>
+        <img src={groupinstagramlogo} alt="" />
+        <div className="group-member">
+          <img src={group1} alt="" />
+          <img src={group2} alt="" />
+          <img src={group3} alt="" />
+          <img src={group4} alt="" />
+        </div>
       </section>
     </div>
   );

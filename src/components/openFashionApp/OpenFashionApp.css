@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 10rem;
   position: relative;
   z-index: 5;
 }
@@ -219,4 +218,23 @@
 .store-detail-sticker span {
   width: 80%;
   text-align: center;
+}
+
+/* group section */
+.group-container{
+    width: 100%;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+row-gap: 1.5rem;
+margin-top: 3rem;
+}
+.group-member{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
 }
