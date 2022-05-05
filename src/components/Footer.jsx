@@ -3,6 +3,7 @@ import "./Footer.css"
 import twitter from "../assets/icons/Twitter.png";
 import youtube from "../assets/icons/YouTube.png";
 import instagram from "../assets/icons/Instagram.png";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
     return ( 
@@ -28,7 +29,7 @@ const Footer = () => {
           <div className="footer-links">
               <h2><a href="">About</a></h2>
               <h2><a href="">Contact</a></h2>
-              <h2><a href="">Blog</a></h2>
+              <h2><NavLink to="/blogs">Blog</NavLink></h2>
           </div>
           <div className="footer-copyright"><p>Copyright OpenUl All Rights Reserved.</p></div>
         </section>
