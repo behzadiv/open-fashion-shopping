@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
             <Badge/>
           <div className="footer-links">
-              <h2><a href="">About</a></h2>
+              <h2><NavLink to="about-us">About</NavLink></h2>
               <h2><NavLink to="contact-us">Contact</NavLink></h2>
               <h2><NavLink to="/blogs">Blog</NavLink></h2>
           </div>
