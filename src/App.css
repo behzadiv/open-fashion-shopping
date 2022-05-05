@@ -32,6 +32,7 @@ html{
 
 body{
   font-family: "tenor";
+  color: var(--color-body);
 }
 h1,h2,h3{
   font-weight: 400;
@@ -74,6 +75,7 @@ h4{
   padding: 1rem 2rem;
   border-radius: .5rem;
   width: 100%;
+  font-family: "tenor";
 }
 .btn-primary{
   background-color: #000;

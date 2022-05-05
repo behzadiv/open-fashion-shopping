@@ -28,7 +28,7 @@ const Footer = () => {
             <Badge/>
           <div className="footer-links">
               <h2><a href="">About</a></h2>
-              <h2><a href="">Contact</a></h2>
+              <h2><NavLink to="contact-us">Contact</NavLink></h2>
               <h2><NavLink to="/blogs">Blog</NavLink></h2>
           </div>
           <div className="footer-copyright"><p>Copyright OpenUl All Rights Reserved.</p></div>
