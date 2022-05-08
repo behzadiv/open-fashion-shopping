@@ -43,7 +43,6 @@ const ProductList = ({ data }) => {
       </div>
     );
   };
-  console.log(window.scrollY);
   return (
     <section>
       {renderProductList()}

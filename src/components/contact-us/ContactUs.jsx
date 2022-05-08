@@ -3,7 +3,11 @@ import chatMessage from "../../assets/contact-us/ChatMessage.png"
 import twitter from "../../assets/contact-us/Twitter.png"
 import addMessage from "../../assets/contact-us/AddMessage.png"
 import Badge from "../../common/Badge"
+import { useEffect } from "react"
 const ContactUs = () => {
+    useEffect(()=>{
+        window.scroll({top:0,behavior:"smooth"})
+    },[])
     return ( 
         <section className="contactUs-section container">
             <h1>CONTACT US</h1>

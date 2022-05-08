@@ -6,7 +6,11 @@ import blog4 from "../../assets/blogs/blog4.png";
 import bookmark from "../../assets/blogs/Bookmark.png";
 import plus from "../../assets/blogs/Plus.png";
 import Badge from "../../common/Badge";
+import { useEffect } from "react";
 const Blog = () => {
+  useEffect(()=>{
+    window.scroll({top:0,behavior:"smooth"})
+},[])
   return (
     <section className="blog-section container">
       <h1>BLOG</h1>

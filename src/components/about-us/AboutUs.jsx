@@ -1,7 +1,11 @@
 import Badge from "../../common/Badge";
 import story from "../../assets/story.png";
 import "./AboutUs.css";
+import { useEffect } from "react";
 const AboutUs = () => {
+    useEffect(()=>{
+        window.scroll({top:0,behavior:"smooth"})
+    },[])
   return (
     <section className="container">
       <div className="aboutUs-container">
