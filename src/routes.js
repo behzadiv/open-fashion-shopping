@@ -5,6 +5,7 @@ import Carts from "./components/carts/Carts";
 import Checkout from "./components/checkout/Checkout";
 import ContactUs from "./components/contact-us/ContactUs";
 import OpenFashionApp from "./components/openFashionApp/OpenFasionApp";
+import SearchCarts from "./components/searchCarts/SearchCarts";
 
 const routes = [
     {path:"/" , element:<OpenFashionApp/>},
@@ -13,6 +14,7 @@ const routes = [
     {path:"/blogs" , element:<Blog/>},
     {path:"/contact-us" , element:<ContactUs/>},
     {path:"/about-us" , element:<AboutUs/>},
+    {path:"/search" , element:<SearchCarts/>},
     {path:"*",element:<NotFound/>},
 ]
 export default routes
