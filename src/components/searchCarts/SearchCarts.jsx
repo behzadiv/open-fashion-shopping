@@ -7,14 +7,19 @@ import { useEffect, useState } from "react";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
 const SearchCarts = () => {
   const { state } = useLocation(); //recieve state(allProducts)by navlink to our search function has hight speed
-  const allProducts = state.allProducts;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllProductsData());
+  }, []);
+  const allProducts = useSelector((state) => state.allProducts.data);//we need to all products to searching
+  const data = state.allProducts && allProducts; //untill loaded allProducts searched on categorized products that sent by state
   const navigate = useNavigate();
   const [resultSearch, setResultSearch] = useState([]);
 
   const changeHandler = (e) => {
     const inputValue = e.target.value.toLowerCase();
-    if (allProducts.length) {
-      const searchedCarts = allProducts.filter((item) => {
+    if (data.length) {
+      const searchedCarts = data.filter((item) => {
         if (inputValue && item.title.toLowerCase().includes(inputValue)) {
           return item;
         }
