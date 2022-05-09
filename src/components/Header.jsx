@@ -14,6 +14,7 @@ import instagram from "../assets/icons/Instagram.png";
 import Badge from "../common/Badge";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import SearchCarts from "./searchCarts/SearchCarts";
 const Header = () => {
   const openCloseMenu = () => {
     document.querySelector(".menu-list").classList.toggle("show");
@@ -33,6 +34,7 @@ const Header = () => {
     document.querySelector(".selected").classList.add(className);
   };
   const { carts } = useSelector((state) => state.carts);
+  const allProducts = useSelector((state) => state.allProducts.data);
   return (
     <div className="navbar-container">
       <div className="navbar">
@@ -44,9 +46,9 @@ const Header = () => {
             <img src={logo} alt="openFashionLogo" />
           </NavLink>
         </span>
-        <span className="navbar-icon">
+        <NavLink to={"/search"}state={{allProducts:allProducts}} className="navbar-icon">
           <img src={search} alt="" />
-        </span>
+        </NavLink>
         <span className="navbar-icon shoppingBag" >
           <NavLink to="/carts">
             <img src={shoppingBag} alt=""  />
