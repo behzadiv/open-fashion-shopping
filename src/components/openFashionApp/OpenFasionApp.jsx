@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Badge from "../../common/Badge";
 import HomePage from "../HomePage";
 import "./OpenFashionApp.css";
@@ -21,6 +21,8 @@ import group3 from "../../assets/group/group3.png";
 import group4 from "../../assets/group/group4.png";
 import groupinstagramlogo from "../../assets/group/groupInstagram.png";
 import logo from "../../assets/Logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProductsData } from "../feature/allProducts/allProductSlice";
 const OpenFashionApp = () => {
   const [category, setCategory] = useState("");
   const selectCategory = (e) => {
@@ -51,6 +53,11 @@ const OpenFashionApp = () => {
         break;
     }
   };
+  const { data} = useSelector((state) => state.allProducts);
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(getAllProductsData(category));
+    }, [category]);
   return (
     <div className="open-fashion-app container">
       <section className="cover-container">
@@ -107,7 +114,7 @@ const OpenFashionApp = () => {
           <span></span>
         </h3>
       </section>
-      <HomePage category={category} />
+      <HomePage  data={data} />
       <Badge />
       <section className="brands">
         <span>

@@ -6,18 +6,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Loading from "./loading/Loading";
-const HomePage = ({ category }) => {
+const HomePage = () => {
   const { data, loading, error } = useSelector((state) => state.allProducts);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllProductsData(category));
-  }, [category]);
-
   if (loading) return <Loading />;
   if (error) return <p>{error.message}</p>;
-
-  return <ProductList data={data} />
-  ;
+  return <ProductList data={data} />;
 };
 
 export default HomePage;
