@@ -27,13 +27,13 @@ const ProductPage = () => {
   };
   useEffect(() => {
     dispatch(getAllProductsData());
+    window.scroll({top:0,behavior:"smooth"})
   }, []);
-  console.log(category);
+  //filter same category products
   const { data } = useSelector((state) => state.allProducts);
   const filteredData = data.filter(
     (item) => item.category === category && item.id !== product.id
   );
-  console.log(data);
   return (
     <section className="product-detail-container container">
       <div className="product-detail">
