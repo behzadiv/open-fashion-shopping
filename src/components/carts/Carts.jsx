@@ -19,8 +19,7 @@ const Carts = () => {
               <div className="checkout-item" key={item.id}>
                 <img src={item.image} alt="" />
                 <div className="checkout-item-desc">
-                  <h3>{item.title}</h3>
-                  <p></p>
+                  <NavLink to={`/product/${item.id}`} state={{product:item}}><h3>{item.title}</h3></NavLink>
                   <div className="checkout-item-qty">
                     <p onClick={() => dispatch(decrementCart(item))}>-</p>
                     <p>{item.quantity}</p>
