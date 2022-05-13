@@ -1,7 +1,7 @@
 import "./SearchCarts.css";
 import search from "../../assets/icons/Search.png";
 import close from "../../assets/icons/Close.png";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
@@ -45,14 +45,14 @@ const SearchCarts = () => {
       <div className="search-body">
         {resultSearch.map((cart) => {
           return (
-            <div key={cart.id}>
+            <NavLink to={`/product/${cart.id}`}state={{product:cart}} key={cart.id}>
               <div className="result-container">
                 <span>
                   <img src={cart.image} />
                 </span>
                 <p className="result-title">{cart.title}</p>
               </div>
-            </div>
+            </NavLink>
           );
         })}
       </div>
