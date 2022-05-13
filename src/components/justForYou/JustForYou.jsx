@@ -40,6 +40,7 @@ const JustForYou = () => {
               productId={product.id}
               addProduct={() => addProduct(product.id)}
               isProductInCart={carts.find((item) => item.id === product.id)}
+              product={product}
             />
           );
         })}
