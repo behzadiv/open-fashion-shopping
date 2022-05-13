@@ -5,10 +5,13 @@ import heart from "../../assets/icons/Heart.png";
 import dontWash from "../../assets/icons/Do Not Wash.png";
 import dontBleach from "../../assets/icons/Do Not Bleach.png";
 import dontDry from "../../assets/icons/Do Not Tumble Dry.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
 import trash from "../../assets/icons/trash.png";
+import { getAllProductsData } from "../feature/allProducts/allProductSlice";
+import Product from "../product/Product";
+import Badge from "../../common/Badge";
 const ProductPage = () => {
   const carts = useSelector((state) => state.carts.carts);
   const dispatch = useDispatch();
@@ -22,6 +25,15 @@ const ProductPage = () => {
     document.getElementById("show-desc").classList.toggle("show");
     document.getElementById("desc-toggle").classList.toggle("opened");
   };
+  useEffect(() => {
+    dispatch(getAllProductsData());
+  }, []);
+  console.log(category);
+  const { data } = useSelector((state) => state.allProducts);
+  const filteredData = data.filter(
+    (item) => item.category === category && item.id !== product.id
+  );
+  console.log(data);
   return (
     <section className="product-detail-container container">
       <div className="product-detail">
@@ -55,15 +67,23 @@ const ProductPage = () => {
             <img src={star} alt="" className="product-detail-desc-star" />
             <span>{rating.rate} Ratings</span>
           </div>
-          <div className="product-detail-desc-size-container">
-            <span>Size</span>
-            <span className="product-detail-desc-size">S</span>
-            <span className="product-detail-desc-size">M</span>
-            <span className="product-detail-desc-size">L</span>
-            <span className="product-detail-desc-fav">
-              <img src={heart} alt="" />
-            </span>
-          </div>
+          {category === "jewelery" || category === "electronics" ? (
+            <div className="product-detail-desc-size-container">
+              <span className="product-detail-desc-fav">
+                <img src={heart} alt="" />
+              </span>
+            </div>
+          ) : (
+            <div className="product-detail-desc-size-container">
+              <span>Size</span>
+              <span className="product-detail-desc-size">S</span>
+              <span className="product-detail-desc-size">M</span>
+              <span className="product-detail-desc-size">L</span>
+              <span className="product-detail-desc-fav">
+                <img src={heart} alt="" />
+              </span>
+            </div>
+          )}
         </div>
       </div>
       <div className="product-description">
@@ -79,17 +99,39 @@ const ProductPage = () => {
         </div>
         <div className="product-description-text" id="show-desc">
           <p>{description}</p>
-          <div>
-            <span>
-              <img src={dontWash} alt="" />
-            </span>
-            <span>
-              <img src={dontBleach} alt="" />
-            </span>
-            <span>
-              <img src={dontDry} alt="" />
-            </span>
-          </div>
+          {category === "jewelery" || category === "electronics" ? null : (
+            <div>
+              <span>
+                <img src={dontWash} alt="" />
+              </span>
+              <span>
+                <img src={dontBleach} alt="" />
+              </span>
+              <span>
+                <img src={dontDry} alt="" />
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="similar-products-container">
+        <h1 className="similar-products-title">Similar Products</h1>
+        <Badge />
+        <div className="similar-products">
+          {filteredData.map((product) => {
+            return (
+              <Product
+                key={product.id}
+                productImage={product.image}
+                productTitle={product.title}
+                productPrice={product.price}
+                productId={product.id}
+                addProduct={() => dispatch(addToCarts(product))}
+                isProductInCart={carts.find((item) => item.id === product.id)}
+                product={product}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

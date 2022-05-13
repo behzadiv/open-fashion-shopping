@@ -121,7 +121,6 @@
     width: 100%;
     margin-top: 1rem;
     padding: 2rem 1.5rem;
-    padding-bottom: .5rem;
     height:0 ;
     width: 100%;
     opacity: 0;
@@ -132,10 +131,27 @@
     flex-direction: column;
     row-gap: 2rem;
     align-items: center;
+    
 }
 .product-description-text.show{
     opacity: 1;
     height: 100%;
     border: 1px solid #DEDEDE;
     border-top: 0;
+   
+}
+.similar-products-container{
+    z-index: 11;
+}
+.similar-products-title{
+    text-align: center;
+}
+.similar-products{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    width: 100vw;
+    gap: 2rem;
+    padding: 1rem;
+    margin-top: 1rem;
 }
