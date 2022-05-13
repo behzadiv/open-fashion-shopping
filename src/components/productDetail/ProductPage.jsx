@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
 import trash from "../../assets/icons/trash.png";
+import close from "../../assets/icons/Close.png";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
 import Product from "../product/Product";
 import Badge from "../../common/Badge";
@@ -27,18 +28,35 @@ const ProductPage = () => {
   };
   useEffect(() => {
     dispatch(getAllProductsData());
-    window.scroll({top:0,behavior:"smooth"})
+    window.scroll({ top: 0, behavior: "smooth" });
   }, []);
   //filter same category products
   const { data } = useSelector((state) => state.allProducts);
   const filteredData = data.filter(
     (item) => item.category === category && item.id !== product.id
   );
+  const showImage = () => {
+    document.getElementById("image").classList.add("show");
+  };
+  const closeImage = () => {
+    document.getElementById("image").classList.remove("show");
+  };
   return (
     <section className="product-detail-container container">
+      <div className="image-fullSize-container" id="image">
+        <img src={image} alt="" className="image-fullSize" />
+        <span onClick={() => closeImage()} className="close-img-icon">
+          <img src={close} alt="" />
+        </span>
+      </div>
       <div className="product-detail">
         <div className="product-detail-image-section">
-          <img src={image} alt="" className="product-detail-img" />
+          <img
+            src={image}
+            alt=""
+            className="product-detail-img"
+            onClick={() => showImage()}
+          />
           {isProductInCart ? (
             <div className="in-cart-style">
               <span onClick={() => dispatch(decrementCart(isProductInCart))}>
