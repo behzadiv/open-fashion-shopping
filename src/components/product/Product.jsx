@@ -2,26 +2,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrementCart } from "../feature/cart/cartsSlice";
 import "./Product.css";
 import trash from "../../assets/icons/trash.png"
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import ProductPage from "../productDetail/ProductPage";
 const Product = ({
   productImage,
   productTitle,
   productPrice,
   productId,
   addProduct,
-  decrementProduct,
-  isProductInCart
+  isProductInCart,
+  product
 }) => {
   // const { carts } = useSelector((state) => state.carts);
   // const productInCart = carts.find((item) => item.id === productId)
   // console.log(productInCart);
+  const [selectedProduct,setSelectedProduct]= useState({})
   const dispatch=useDispatch()
+  
   return (
     <div className="card">
+    <NavLink to={`/product/${productId}`} state={{product:product}} >
       <img src={productImage} alt="" className="card-img"/>
       <div className="card-body">
         <h3 className="product-title">{productTitle}</h3>
         <h2 className="product-price">${productPrice}</h2>
       </div>
+      </NavLink>
       <div className="card-btn">
         {isProductInCart ? (
           <div className="in-cart-style">

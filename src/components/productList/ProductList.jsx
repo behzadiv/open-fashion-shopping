@@ -4,6 +4,7 @@ import { useState } from "react";
 import foewardArrow from "../../assets/icons/ForwardArrow.png";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
+import ProductPage from "../productDetail/ProductPage";
 const ProductList = ({ data }) => {
   const [moreProduct, setMoreProduct] = useState(false);
   const { carts } = useSelector((state) => state.carts);
@@ -13,6 +14,7 @@ const ProductList = ({ data }) => {
     let selectedId = Number(id);
     const myProduct = data.filter((product) => product.id === selectedId);
     //pass as object
+    console.log(myProduct[0]);
     dispatch(addToCarts(myProduct[0]));
   };
   
@@ -31,6 +33,7 @@ const ProductList = ({ data }) => {
                   productId={product.id}
                   addProduct={() => addProduct(product.id)}
                   isProductInCart = {carts.find((item) => item.id === product.id)}
+                  product={product}
                 />
               ))
           : data.map((product) => (
@@ -42,11 +45,13 @@ const ProductList = ({ data }) => {
                 productId={product.id}
                 addProduct={() => addProduct(product.id)}
                 isProductInCart = {carts.find((item) => item.id === product.id)}
+                product={product}
               />
             ))}
       </div>
     );
   };
+  
   return (
     <section>
       {renderProductList()}
