@@ -1,16 +1,23 @@
+.header-container{
+  max-width: 141rem;
+}
+
 .navbar {
-  background-color: var(--color-navbar);
-  width: 100%;
+  max-width: 140rem;
   height: 60px;
+  position: fixed;
+  background-color: var(--color-navbar);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   text-align: center;
   align-items: center;
   padding: 1.4rem;
-  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
+  margin: 0 auto;
 }
 .navbar.hidden {
   display: none;
@@ -24,7 +31,7 @@
   width: 2.4rem;
 }
 .navbar-logo {
-  cursor: unset;
+  cursor: pointer;
   height: 100%;
   flex: 9;
 }
@@ -37,27 +44,26 @@
   background-color: var(--color-white);
   padding: 1.7rem;
   opacity:0 ;
-  height: 100vh;
+  height: 10vh;
   flex: 100%;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-  text-align: start;
   transition: all 300ms ease-in-out;
   padding: 2.5rem;
-  z-index: -1;
 }
 .menu-list.show {
   z-index: 11;
   opacity: 1;
-  height: 100vh;
+  height: 100vh !important;
 }
 .menu-list-titles {
   display: flex;
   justify-content: flex-start;
   margin-top: 2rem;
   letter-spacing: 0.3rem;
+  cursor: pointer;
 }
 .title {
   width: 100%;
@@ -104,6 +110,7 @@
   align-items: center;
   flex-wrap: wrap;
   width: 90%;
+  cursor: pointer;
 }
 .item-list {
   width: 100%;
@@ -153,6 +160,7 @@
   width: 100%;
   justify-content: center;
   gap: 3.5rem;
+  cursor: pointer;
 }
 /* when menu opened disable scroll page */
 .fixed-position{
@@ -179,3 +187,45 @@
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (min-width:452px){
+  .navbar-logo {
+    flex: 15;
+  }
+}
+@media screen and (min-width:800px){
+  .header-container{
+    position: relative;
+    max-width: 141rem;
+  }
+  .navbar-logo {
+    flex: 20;
+  }
+  .menu-list {
+    width: 0%;
+    height: 100vh;
+  }
+  .menu-list.show {
+    width: 45%;
+    z-index: 11;
+    opacity: 1;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  .fixed-position{
+    position: unset;
+    width: 100%;
+  }
+}
+@media screen and (min-width:1000px){
+  .navbar-logo {
+    flex: 30;
+  }
+  .menu-list.show{
+    width: 50rem;
+    left: auto;
+  }
+}
+

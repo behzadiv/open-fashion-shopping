@@ -71,7 +71,7 @@ p {
 }
 .container {
   max-width: 450px;
-  margin: 4rem auto;
+  margin:0 auto;
   overflow: hidden;
   padding: 1rem 2rem;
 }
@@ -89,8 +89,29 @@ p {
   transition: all 0.15s ease-in-out;
 }
 .btn-primary:hover {
-  background-color: #0473ea;
+  background-color: #d6d6d6;
+  color: #000;
 }
 *::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (min-width:452px){
+  .container {
+    max-width: 800px;
+    /* background-color: blue; */
+  }
+}
+@media screen and (min-width:800px){
+  .container {
+    max-width: 1000px;
+    /* background-color: yellow; */
+  }
+}
+@media screen and (min-width:1000px){
+  .container {
+    max-width: 1400px;
+    padding: 0;
+    /* background-color: green; */
+  }
 }

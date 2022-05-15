@@ -36,7 +36,7 @@ const Header = () => {
   const { carts } = useSelector((state) => state.carts);
   const allProducts = useSelector((state) => state.allProducts.data);
   return (
-    <div className="navbar-container">
+    <section className="header-container container">
       <div className="navbar">
         <span className="navbar-icon" onClick={() => openCloseMenu()}>
           <img src={menu} alt="" />
@@ -180,7 +180,7 @@ const Header = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

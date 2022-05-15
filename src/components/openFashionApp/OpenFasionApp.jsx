@@ -20,7 +20,7 @@ import group2 from "../../assets/group/group2.png";
 import group3 from "../../assets/group/group3.png";
 import group4 from "../../assets/group/group4.png";
 import groupinstagramlogo from "../../assets/group/groupInstagram.png";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/Logo2.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
 const OpenFashionApp = () => {
@@ -53,21 +53,40 @@ const OpenFashionApp = () => {
         break;
     }
   };
-  const { data} = useSelector((state) => state.allProducts);
-    const dispatch = useDispatch();
-    useEffect(() => {
-      dispatch(getAllProductsData(category));
-    }, [category]);
+  const { data } = useSelector((state) => state.allProducts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllProductsData(category));
+  }, [category]);
+  const[showCover,setShowCover]=useState(true)
+  const hideCover=()=>{
+    document.getElementById("cover").classList.toggle("hide")
+  }
   return (
     <div className="open-fashion-app container">
-      <section className="cover-container">
-        <p className="cover-text">
-          <span>LUXURY</span>
-          <span>FASHION</span>
-          <span>&ACCESSORIES</span>
-        </p>
-        <div className="cover-link">
-          <h1>EXPLORE COLLECTION</h1>
+      <section className="cover-container" id="cover">
+        <div className="small-cover-container">
+          <div className="small-cover-text">
+            <span>LUXURY</span>
+            <span>FASHION</span>
+            <span>&ACCESSORIES</span>
+          </div>
+          <div className="cover-link" onClick={()=>hideCover()}>
+            <h1>EXPLORE COLLECTION</h1>
+          </div>
+        </div>
+        <div className="big-cover-container">
+          <img src={logo} alt="" className="big-cover-img" />
+          <h2 className="big-cover-text">
+            Free UI Kit with elegant and modern style will help you to quickly
+            create your own design. Come with 30 essential screens, Open Fashion
+            Free eCommerce UI Kit is the perfect fit for designers, developers,
+            startups... to quickly adapt to design. Open Fashion support auto
+            layout, variant components, and free fontS.
+          </h2>
+          <div className="cover-link" onClick={()=>hideCover()}>
+            <h1>EXPLORE COLLECTION</h1>
+          </div>
         </div>
       </section>
       <h1 className="open-fashion-app-title">NEW ARRIVAL</h1>
@@ -114,7 +133,7 @@ const OpenFashionApp = () => {
           <span></span>
         </h3>
       </section>
-      <HomePage  data={data} />
+      <HomePage data={data} />
       <Badge />
       <section className="brands">
         <span>
