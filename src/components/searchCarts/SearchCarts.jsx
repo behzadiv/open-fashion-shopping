@@ -29,7 +29,7 @@ const SearchCarts = () => {
   };
   return (
     <section className="search-container container">
-      <div className="search-header">
+      <div className="search-header container">
         <input
           type="text"
           placeholder="Search items"
