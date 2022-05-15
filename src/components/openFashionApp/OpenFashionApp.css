@@ -109,19 +109,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  max-width: 40rem;
   flex-wrap: wrap;
-  gap: 1rem;
   padding: 1rem 2rem;
   margin: 2rem auto;
 }
 .brands span {
+  width: 10rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .brands img {
-  width: 9rem;
+  width: 10rem;
 }
 
 /* collections */
@@ -193,7 +194,7 @@
 /* store-details */
 
 .store-detail {
-  width: 100%;
+  max-width: 60rem;
   background-color: #f2f2f2;
   opacity: 0.8;
   display: flex;
@@ -295,7 +296,17 @@
 }
 
 @media screen and (min-width: 1000px) {
+  
   .cover-container {
     background: url("../../assets/coverBig.png") no-repeat 60% 3rem;
+  }
+  .brands {
+    max-width: 70rem;
+  }
+  .brands span {
+    width: 20rem;
+  }
+  .brands img {
+    width: 15rem;
   }
 }

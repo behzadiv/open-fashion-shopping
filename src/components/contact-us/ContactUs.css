@@ -1,6 +1,7 @@
 .contactUs-section {
   text-align: center;
   margin-top: 8rem;
+  max-width: 60rem;
 }
 .contactUs-container {
   display: flex;
@@ -8,7 +9,7 @@
   align-items: center;
   padding: 2rem 0;
   row-gap: 6rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .contactUs {
   display: flex;
