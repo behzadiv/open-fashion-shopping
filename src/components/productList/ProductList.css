@@ -27,3 +27,10 @@
 .showProduct.showProduct-less img{
     transform: rotateY(180deg);
  }
+
+ @media screen and (min-width:1000px) {
+    .productList-container{
+        display: flex;
+        gap: 5rem;
+    }
+ }

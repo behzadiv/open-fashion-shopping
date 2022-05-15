@@ -53,7 +53,7 @@ const ProductList = ({ data }) => {
   };
   
   return (
-    <section>
+    <section className={!moreProduct ? "productList-container" : ""}>
       {renderProductList()}
       <div
         className={
