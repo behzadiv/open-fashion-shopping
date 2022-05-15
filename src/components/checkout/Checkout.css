@@ -1,6 +1,6 @@
 .checkout-container {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -158,10 +158,12 @@
   font-size: 1.6rem;
   font-weight: 400;
 }
-/* .voucher-btn{
-    flex: .5;
-   font-size: 1.2rem;
-    padding: .7rem 0;
-    background-color: rgb(255, 40, 40);
-    color: #fff;
-} */
+@media screen and (min-width: 1000px) {
+  .checkout-container{
+    margin-top: 6.5rem;
+    padding: 0 5rem;
+  }
+  .checkout-btn{
+    max-width: 140rem;
+  }
+}
