@@ -26,7 +26,7 @@ const Carts = () => {
                     <p onClick={() => dispatch(addToCarts(item))}>+</p>
                   </div>
                   <p className="checkout-item-price">
-                    ${Number(item.price) * Number(item.quantity)}
+                    ${(Number(item.price) * Number(item.quantity)).toFixed(2)}
                   </p>
                 </div>
               </div>
