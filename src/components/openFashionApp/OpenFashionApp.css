@@ -9,17 +9,14 @@
   padding-bottom: 10rem;
 }
 /* cover  */
+
 .cover-container {
-  width: 100vw;
-  height: 100vh;
+  max-width: 140rem;
   position: relative;
-  background: url("../../assets/cover.png") no-repeat 30% 0%;
-  background-size: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 10rem;
 }
 .cover-container.hide {
   display: none;
@@ -28,16 +25,21 @@
   display: none;
 }
 .small-cover-container {
-  width: 100%;
+  background: url("../../assets/small-cover.png") no-repeat center center;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   row-gap: 2rem;
+  padding-left: 2rem;
 }
 .small-cover-text {
-  font-size: 3.8rem;
+  font-size: 2.2rem;
   font-family: sans-serif;
-  line-height: 4.3rem;
+  line-height: 2.3rem;
   font-weight: 700;
   color: #333333;
   letter-spacing: 0.12rem;
@@ -52,12 +54,16 @@
 .cover-link {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 30px;
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 1rem;
   backdrop-filter: blur(4px);
-  max-width: 40rem;
+  width: 22rem;
+  cursor: pointer;
 }
-.cover-link h1 {
+.cover-link p {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
   color: #fcfcfc;
+  padding: 0.2rem 1rem;
 }
 .small-cover-text :nth-child(even) {
   padding-left: 2rem;
@@ -69,15 +75,16 @@
 /* end cover */
 
 .open-fashion-app-title {
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
   margin-bottom: 0.5rem;
 }
 .product-category {
+  width: 100%;
   margin: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 .product-category .category-title {
   cursor: pointer;
@@ -255,40 +262,37 @@
 }
 @media screen and (min-width: 600px) {
   .small-cover-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 2rem;
-    padding-left: 2rem;
+    background: url("../../assets/medium-cover.png") no-repeat center center;
+    background-size: 100% 100%;
+  }
+  .product-category {
+    gap: 3rem;
   }
 }
-@media screen and (min-width: 800px) {
-  .cover-container {
-    background: url("../../assets/coverBig.png") no-repeat 60% 0rem;
-    background-size: cover;
-    max-width: 1398px;
-  }
+
+@media screen and (min-width: 950px) {
   .big-cover-container {
+    width: 100%;
+    background: url("../../assets/large-cover.png") no-repeat 50% 30%;
+    background-size: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 1rem 2rem;
+    padding: 8rem 2rem;
     justify-content: center;
-    margin-top: 10rem;
-    row-gap: 4rem;
+    row-gap: 2rem;
   }
   .big-cover-img {
     width: 20rem !important;
     height: 10rem !important;
-    margin-right: 4rem;
+    margin-right: 2rem;
   }
 
   .big-cover-text {
     width: 25%;
     color: #fcfcfc;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
     text-align: center;
   }
   .small-cover-container {
@@ -297,9 +301,13 @@
 }
 
 @media screen and (min-width: 1000px) {
-  
-  .cover-container {
-    background: url("../../assets/coverBig.png") no-repeat 60% 3rem;
+  .big-cover-img {
+    margin-right: 5rem;
+  }
+  .big-cover-text {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-align: center;
   }
   .brands {
     max-width: 70rem;
@@ -309,5 +317,14 @@
   }
   .brands img {
     width: 15rem;
+  }
+  .cover-link {
+    width: 25%;
+    text-align: center;
+  }
+  .cover-link p {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    padding: 0.1rem 2rem;
   }
 }

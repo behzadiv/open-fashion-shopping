@@ -13,6 +13,7 @@ import close from "../../assets/icons/Close.png";
 import { getAllProductsData } from "../feature/allProducts/allProductSlice";
 import Product from "../product/Product";
 import Badge from "../../common/Badge";
+import Loading from "../loading/Loading";
 const ProductPage = () => {
   const carts = useSelector((state) => state.carts.carts);
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const ProductPage = () => {
     window.scroll({ top: 0, behavior: "smooth" });
   }, []);
   //filter same category products
-  const { data } = useSelector((state) => state.allProducts);
+  const { data, loading, error } = useSelector((state) => state.allProducts);
   const filteredData = data.filter(
     (item) => item.category === category && item.id !== product.id
   );
@@ -135,22 +136,28 @@ const ProductPage = () => {
       <div className="similar-products-container">
         <h1 className="similar-products-title">Similar Products</h1>
         <Badge />
-        <div className="similar-products">
-          {filteredData.map((product) => {
-            return (
-              <Product
-                key={product.id}
-                productImage={product.image}
-                productTitle={product.title}
-                productPrice={product.price}
-                productId={product.id}
-                addProduct={() => dispatch(addToCarts(product))}
-                isProductInCart={carts.find((item) => item.id === product.id)}
-                product={product}
-              />
-            );
-          })}
-        </div>
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <p>{error.message}</p>
+        ) : (
+          <div className="similar-products">
+            {filteredData.map((product) => {
+              return (
+                <Product
+                  key={product.id}
+                  productImage={product.image}
+                  productTitle={product.title}
+                  productPrice={product.price}
+                  productId={product.id}
+                  addProduct={() => dispatch(addToCarts(product))}
+                  isProductInCart={carts.find((item) => item.id === product.id)}
+                  product={product}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );

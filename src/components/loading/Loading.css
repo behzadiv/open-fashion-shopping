@@ -1,11 +1,13 @@
 .loading {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  row-gap: 6rem;
+  gap: 4rem;
+  row-gap: 2rem;
   margin-bottom: 3rem;
+  margin-top: 1.5rem;
 }
 .loading-card-container {
   width: 16.5rem;
@@ -26,7 +28,7 @@
   margin-bottom: 1.2rem;
 }
 .loading-card-img {
-  background-color: #E7EAEF;
+  background-color: #e7eaef;
   width: 10rem;
   height: 10rem;
   border: 1px solid rgba(51, 51, 51, 0.13);
@@ -38,7 +40,7 @@
 .loading-card-price {
   width: 80%;
   height: 2rem;
-  background-color: #E7EAEF;
+  background-color: #e7eaef;
   padding: 1rem;
   text-align: center;
   margin-bottom: 1.2rem;
@@ -46,6 +48,27 @@
   animation: myAnim 900ms infinite;
 }
 @keyframes myAnim {
-    from {background-color: #E7EAEF;}
-    to {background-color: #d6d6d6;}
+  from {
+    background-color: #e7eaef;
   }
+  to {
+    background-color: #d6d6d6;
+  }
+}
+@media screen and (max-width: 440px) {
+  .loading-card-container {
+    width: 10.5rem;
+    height: 20rem;
+  }
+  .loading-card-img-container {
+    width: 12.5rem;
+    height: 18rem;
+  }
+  .loading-card-img {
+    background-color: #e7eaef;
+    width: 8.5rem;
+    height: 10rem;
+    border: 1px solid rgba(51, 51, 51, 0.13);
+    padding: 1rem 2rem;
+  }
+}

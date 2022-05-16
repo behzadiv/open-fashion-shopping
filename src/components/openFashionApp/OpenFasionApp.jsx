@@ -58,12 +58,12 @@ const OpenFashionApp = () => {
   useEffect(() => {
     dispatch(getAllProductsData(category));
   }, [category]);
-  const[showCover,setShowCover]=useState(true)
-  const hideCover=()=>{
-    document.getElementById("cover").classList.toggle("hide")
-  }
+  const [showCover, setShowCover] = useState(true);
+  const hideCover = () => {
+    document.getElementById("cover").classList.toggle("hide");
+  };
   return (
-    <div className="open-fashion-app container">
+    <div className="open-fashion-app">
       <section className="cover-container" id="cover">
         <div className="small-cover-container">
           <div className="small-cover-text">
@@ -71,8 +71,8 @@ const OpenFashionApp = () => {
             <span>FASHION</span>
             <span>&ACCESSORIES</span>
           </div>
-          <div className="cover-link" onClick={()=>hideCover()}>
-            <h1>EXPLORE COLLECTION</h1>
+          <div className="cover-link" onClick={() => hideCover()}>
+            <p>EXPLORE COLLECTION</p>
           </div>
         </div>
         <div className="big-cover-container">
@@ -84,8 +84,8 @@ const OpenFashionApp = () => {
             startups... to quickly adapt to design. Open Fashion support auto
             layout, variant components, and free fontS.
           </h2>
-          <div className="cover-link" onClick={()=>hideCover()}>
-            <h1>EXPLORE COLLECTION</h1>
+          <div className="cover-link" onClick={() => hideCover()}>
+            <p>EXPLORE COLLECTION</p>
           </div>
         </div>
       </section>

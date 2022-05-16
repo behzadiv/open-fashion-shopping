@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-bottom: 10rem;
 }
 .checkout-info {
   width: 100%;
@@ -64,6 +65,10 @@
   font-size: 1.4rem;
   gap: 1.6rem;
   align-items: center;
+}
+.checkout-item-qty :nth-child(odd){
+  cursor: pointer;
+
 }
 .checkout-item-qty :nth-child(odd) {
   width: 2rem;
@@ -139,6 +144,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 12;
+  background-color: #fff;
 }
 .checkout-total-price {
   font-size: 1.6rem;
