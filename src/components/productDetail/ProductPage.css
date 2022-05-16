@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   row-gap: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 .image-fullSize-container {
   display: none;

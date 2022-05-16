@@ -1,8 +1,12 @@
 .footer-container {
   position: absolute;
   text-align: center;
-  width: 100vw;
+  max-width: 140rem;
   height: 10vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  /* bottom: 0; */
 }
 .footer-social {
   width: 100%;

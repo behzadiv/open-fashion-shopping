@@ -23,13 +23,13 @@ const Header = () => {
   };
   const dropDown = (e) => {
     if (e.target.classList.value !== "item-container") {
-      let element = e.target;
+      const element = e.target;
       element.parentElement.childNodes[2].classList.toggle("show");
       element.parentElement.childNodes[1].classList.toggle("rotate");
     }
   };
   const selectCategory = (e) => {
-    let className = e.target.innerText.toLowerCase();
+    const className = e.target.innerText.toLowerCase();
     document.querySelector(".selected").classList = ["selected"];
     document.querySelector(".selected").classList.add(className);
   };
