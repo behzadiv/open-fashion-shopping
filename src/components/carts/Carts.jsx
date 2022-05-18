@@ -6,7 +6,7 @@ import {
   decrementCart,
 } from "../../components/feature/cart/cartsSlice";
 import "./Carts.css";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import {NavLink, useNavigate } from "react-router-dom";
 const Carts = () => {
   const navigate =useNavigate() 
   const { total, carts } = useSelector((state) => state.carts);
@@ -53,7 +53,7 @@ const Carts = () => {
           <h1>CARTS</h1>
         </div>
         {carts.length>0? renderCarts() : <p className="cart-empty">You have no items in your Shopping Bag</p>}
-        <NavLink to={carts.length? "/checkout" : "/"} className="btn btn-primary cart-btn">
+        <NavLink to={carts.length? "/signup?redirect=/checkout" : "/"} className="btn btn-primary cart-btn">
           <span>
             <img src={shoppingBag} alt="" />
           </span>

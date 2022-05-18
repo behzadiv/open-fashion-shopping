@@ -1,23 +1,25 @@
 import { useDispatch, useSelector } from "react-redux";
 import Badge from "../../common/Badge";
 import "./Checkout.css";
+import {NavLink, useNavigate } from "react-router-dom";
 import voucher from "../../assets/icons/Voucher.png";
 import shoppingBag from "../../assets/icons/shoppingBag2.png";
 import delivery from "../../assets/icons/Door to Door Delivery.png";
 import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
 const Checkout = () => {
   const { carts, total } = useSelector((state) => state.carts);
+  const {name,email,phoneNumber}  = useSelector((state)=>state.auth.data)
   const dispatch = useDispatch();
-  //console.log(carts.carts);
+  console.log(name,email,phoneNumber);
   return (
     <section className="container">
       <div className="checkout-container">
         <h1 className="checkout-title">CHECKOUT</h1>
         <Badge />
         <div className="checkout-info">
-            <h2>Irish Watson</h2>
-            <p>606-3227 Ullamcorper.Street</p>
-            <p>irish-watson@gmail.com</p>
+            <h2>{name}</h2>
+            <p>{email}</p>
+            <p>{phoneNumber}</p>
         </div>
             <span className="checkout-border"></span>
         <div className="checkout-body">
@@ -59,15 +61,14 @@ const Checkout = () => {
             <h1>EST.TOTAL</h1>
             <span className="checkout-total-price">${total.toFixed(2)}</span>
           </div>
-          <button className="btn btn-primary checkout-btn">
+          <NavLink to={carts.length ? "" : "/"}className="btn btn-primary checkout-btn">
             <span>
               <img src={shoppingBag} alt="" />
             </span>
-            <p>PAY BY CREDIT CARD</p>
-          </button>
+            <p>{carts.length?"PAY BY CREDIT CARD":"Go to shopping"}</p>
+          </NavLink>
         </div>
       </div>
-      {/* <NavLink to="/">gotohome</NavLink> */}
     </section>
   );
 };

@@ -5,8 +5,11 @@ import Input from "../../common/Input";
 import { ToastContainer, toast } from "react-toastify";
 import "./Signup.css";
 import Badge from "../../common/Badge";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../feature/auth/authSlice";
+import { useQuery } from "../../hooks/useQuery";
 const validationSchema = Yup.object({
   name: Yup.string()
     .required("name is required!")
@@ -35,6 +38,16 @@ const initialValues = {
 
 const Signup = () => {
   const [error, setError] = useState(null);
+  const auth = useSelector(state=>state.auth.data)
+  console.log(auth);
+  const dispatch = useDispatch()
+  const query = useQuery()
+  const redirect = query.get("redirect") || "/"
+  console.log(redirect);
+  const navigate = useNavigate()
+  useEffect(()=>{
+      if(auth)navigate(redirect)
+  },[redirect,auth])
   const onSubmit = async (values, actions) => {
     setError(null);
     //console.log(values);
@@ -48,13 +61,16 @@ const Signup = () => {
     await axios
       .post("http://localhost:5000/api/user/register", userData)
       .then((response) => {
-        actions.resetForm({
-          name: "",
-          email: "",
-          phoneNumber: "",
-          password: "",
-        });
-        toast.success("Your signUp is complete");
+          actions.resetForm({
+              name: "",
+              email: "",
+              phoneNumber: "",
+              password: "",
+            });
+            localStorage.setItem("authState",JSON.stringify(response.data))
+            toast.success("Your signUp is complete");
+            navigate(redirect)
+            dispatch(setAuth(response.data))
       })
       .catch((err) => {
         console.log(err.response);
@@ -104,7 +120,7 @@ const Signup = () => {
           </button>
           <h2>
             <span>Already have an account? </span>
-            <NavLink to="/login" style={{textDecoration:"underline"}}>Sign In</NavLink>
+            <NavLink to={`/login?redirect=${redirect}`} style={{textDecoration:"underline"}}>Sign In</NavLink>
           </h2>
         </dir>
       </form>
