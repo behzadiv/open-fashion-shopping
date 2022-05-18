@@ -7,8 +7,10 @@ import ContactUs from "./components/contact-us/ContactUs";
 import OpenFashionApp from "./components/openFashionApp/OpenFasionApp";
 import SearchCarts from "./components/searchCarts/SearchCarts";
 import ProductPage from "./components/productDetail/ProductPage";
+import Signup from "./components/signup/Signup";
 
 const routes = [
+    {path:"/signup" , element:<Signup/>},
     {path:"/" , element:<OpenFashionApp/>},
     {path:"/carts", element:<Carts/>},
     {path:"/checkout", element:<Checkout/>},

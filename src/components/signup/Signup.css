@@ -1,0 +1,45 @@
+.signup-container {
+  margin-top: 5rem;
+  text-align: center;
+}
+form {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 40rem;
+  align-items: center;
+}
+
+form label {
+  color: rgba(105, 97, 97, 0.986);
+  display: flex;
+  font-size: 1.4rem;
+}
+.submit-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    row-gap: 1rem;
+    width: 100%;
+    padding:  0 2rem;
+}
+.submitNotActive {
+  background-color: rgba(189, 171, 171, 0.664);
+  color: #444;
+  cursor: not-allowed;
+}
+
+input + label {
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+@media screen and (min-width:1000px) {
+    .signup-container {
+        margin-top: 8rem;
+      }
+    .submit-container{
+        padding: 0;
+    }
+}
