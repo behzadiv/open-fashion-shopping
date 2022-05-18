@@ -8,17 +8,19 @@ import OpenFashionApp from "./components/openFashionApp/OpenFasionApp";
 import SearchCarts from "./components/searchCarts/SearchCarts";
 import ProductPage from "./components/productDetail/ProductPage";
 import Signup from "./components/signup/Signup";
+import Login from "./components/login/Login";
 
 const routes = [
-    {path:"/signup" , element:<Signup/>},
-    {path:"/" , element:<OpenFashionApp/>},
-    {path:"/carts", element:<Carts/>},
-    {path:"/checkout", element:<Checkout/>},
-    {path:"/blogs" , element:<Blog/>},
-    {path:"/contact-us" , element:<ContactUs/>},
-    {path:"/about-us" , element:<AboutUs/>},
-    {path:"/search" , element:<SearchCarts/>},
-    {path:"/product/:id" , element:<ProductPage/>},
-    {path:"*",element:<NotFound/>},
-]
-export default routes
+  { path: "/login", element: <Login /> },
+  { path: "/signup", element: <Signup /> },
+  { path: "/", element: <OpenFashionApp /> },
+  { path: "/carts", element: <Carts /> },
+  { path: "/checkout", element: <Checkout /> },
+  { path: "/blogs", element: <Blog /> },
+  { path: "/contact-us", element: <ContactUs /> },
+  { path: "/about-us", element: <AboutUs /> },
+  { path: "/search", element: <SearchCarts /> },
+  { path: "/product/:id", element: <ProductPage /> },
+  { path: "*", element: <NotFound /> },
+];
+export default routes;
