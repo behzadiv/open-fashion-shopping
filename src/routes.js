@@ -9,8 +9,10 @@ import SearchCarts from "./components/searchCarts/SearchCarts";
 import ProductPage from "./components/productDetail/ProductPage";
 import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
+import Profile from "./components/profile/profile";
 
 const routes = [
+  { path: "/profile", element: <Profile /> },
   { path: "/login", element: <Login /> },
   { path: "/signup", element: <Signup /> },
   { path: "/", element: <OpenFashionApp /> },

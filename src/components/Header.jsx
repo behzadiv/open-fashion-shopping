@@ -4,6 +4,8 @@ import logo from "../assets/Logo.png";
 import menu from "../assets/icons/Menu.png";
 import shoppingBag from "../assets/icons/shoppingBag.png";
 import search from "../assets/icons/Search.png";
+import user from "../assets/icons/user.png";
+import userLogin from "../assets/icons/user-login.png";
 import close from "../assets/icons/Close.png";
 import down from "../assets/icons/Down.png";
 import location from "../assets/icons/Location.png";
@@ -16,6 +18,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SearchCarts from "./searchCarts/SearchCarts";
 const Header = () => {
+  const userData= useSelector(state=>state.auth.data)
   const openCloseMenu = () => {
     document.querySelector(".menu-list").classList.toggle("show");
     // when opened menu add this class to disable scrolling
@@ -55,6 +58,11 @@ const Header = () => {
             <span className="carts-qty">
               {carts.length ? carts.length : null}
             </span>
+          </NavLink>
+        </span>
+        <span className="navbar-icon profile" >
+          <NavLink to={userData? "/profile" : "/login"}>
+            <img src={userData? userLogin : user} alt=""  />
           </NavLink>
         </span>
       </div>

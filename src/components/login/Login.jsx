@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
 const Login = () => {
     const [error,setError]=useState(null)
     const query =useQuery()
-    const redirect  = query.get("redirect") || "/login"
+    const redirect  = query.get("redirect") || "/"
     const auth = useSelector(state=>state.auth.data)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -88,7 +88,7 @@ const Login = () => {
           </button>
           <h2>
             <span>Don't have an account? </span>
-            <NavLink to="/signup" style={{textDecoration:"underline"}}>Sign Up</NavLink>
+            <NavLink to={`/signup?redirect=${redirect}`} style={{textDecoration:"underline"}}>Sign Up</NavLink>
           </h2>
         </dir>
       </form>
