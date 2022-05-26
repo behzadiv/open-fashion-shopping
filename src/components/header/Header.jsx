@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
-import logo from "../assets/Logo.png";
-import menu from "../assets/icons/Menu.png";
-import shoppingBag from "../assets/icons/shoppingBag.png";
-import search from "../assets/icons/Search.png";
-import user from "../assets/icons/user.png";
-import userLogin from "../assets/icons/user-login.png";
-import close from "../assets/icons/Close.png";
-import down from "../assets/icons/Down.png";
-import location from "../assets/icons/Location.png";
-import call from "../assets/icons/Call.png";
-import twitter from "../assets/icons/Twitter.png";
-import youtube from "../assets/icons/YouTube.png";
-import instagram from "../assets/icons/Instagram.png";
-import Badge from "../common/Badge";
+import logo from "../../assets/Logo.png";
+import menu from "../../assets/icons/Menu.png";
+import shoppingBag from "../../assets/icons/shoppingBag.png";
+import search from "../../assets/icons/Search.png";
+import user from "../../assets/icons/user.png";
+import userLogin from "../../assets/icons/user-login.png";
+import close from "../../assets/icons/Close.png";
+import down from "../../assets/icons/Down.png";
+import location from "../../assets/icons/Location.png";
+import call from "../../assets/icons/Call.png";
+import twitter from "../../assets/icons/Twitter.png";
+import youtube from "../../assets/icons/YouTube.png";
+import instagram from "../../assets/icons/Instagram.png";
+import Badge from "../../common/Badge";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import SearchCarts from "./searchCarts/SearchCarts";
 const Header = () => {
   const userData= useSelector(state=>state.auth.data)
   const openCloseMenu = () => {

@@ -1,15 +1,15 @@
-import AboutUs from "./components/about-us/AboutUs";
-import NotFound from "./components/NotFound";
-import Blog from "./components/blog/Blog";
-import Carts from "./components/carts/Carts";
-import Checkout from "./components/checkout/Checkout";
-import ContactUs from "./components/contact-us/ContactUs";
-import OpenFashionApp from "./components/openFashionApp/OpenFasionApp";
-import SearchCarts from "./components/searchCarts/SearchCarts";
-import ProductPage from "./components/productDetail/ProductPage";
-import Signup from "./components/signup/Signup";
-import Login from "./components/login/Login";
-import Profile from "./components/profile/profile";
+import AboutUs from "./pages/about-us/AboutUs";
+import NotFound from "./pages/notFound/NotFound";
+import Blog from "./pages/blog/Blog";
+import Carts from "./pages/carts/Carts";
+import Checkout from "./pages/checkout/Checkout";
+import ContactUs from "./pages/contact-us/ContactUs";
+import OpenFashionApp from "./pages/openFashionApp/OpenFasionApp";
+import SearchCarts from "./pages/searchCarts/SearchCarts";
+import ProductPage from "./pages/productDetail/ProductPage";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
+import Profile from "./pages/profile/profile";
 
 const routes = [
   { path: "/profile", element: <Profile /> },

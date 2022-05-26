@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import notFound from "../assets/notFound.png";
-import backwardArrow from "../assets/icons/BackwardArrow.png";
+import notFound from "../../assets/notFound.png";
+import backwardArrow from "../../assets/icons/BackwardArrow.png";
 import "./NotFound.css";
 const NotFound = () => {
   return (

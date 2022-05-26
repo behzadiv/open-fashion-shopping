@@ -9,7 +9,7 @@ import Badge from "../../common/Badge";
 import "./Login.css"
 import { useQuery } from "../../hooks/useQuery";
 import { useDispatch, useSelector } from "react-redux";
-import { setAuth } from "../feature/auth/authSlice";
+import { setAuth } from "../../components/feature/auth/authSlice";
 const validationSchema = Yup.object({
     email: Yup.string().email("Invalid Email").required("email is required!"),
     password: Yup.string()

@@ -2,7 +2,6 @@ import { Provider } from "react-redux";
 import "./App.css";
 import { store } from "../src/components/feature/store";
 import Layout from "./layout/Layout";
-import OpenFashionApp from "./components/openFashionApp/OpenFasionApp";
 import routes from "./routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

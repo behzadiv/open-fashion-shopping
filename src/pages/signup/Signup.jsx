@@ -8,7 +8,7 @@ import Badge from "../../common/Badge";
 import { Navigate, NavLink, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setAuth } from "../feature/auth/authSlice";
+import { setAuth } from "../../components/feature/auth/authSlice";
 import { useQuery } from "../../hooks/useQuery";
 const validationSchema = Yup.object({
   name: Yup.string()

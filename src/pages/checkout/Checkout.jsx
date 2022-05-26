@@ -5,7 +5,7 @@ import {NavLink, useNavigate } from "react-router-dom";
 import voucher from "../../assets/icons/Voucher.png";
 import shoppingBag from "../../assets/icons/shoppingBag2.png";
 import delivery from "../../assets/icons/Door to Door Delivery.png";
-import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
+import { addToCarts, decrementCart } from "../../components/feature/cart/cartsSlice";
 const Checkout = () => {
   const { carts, total } = useSelector((state) => state.carts);
   const {name,email,phoneNumber}  = useSelector((state)=>state.auth.data)

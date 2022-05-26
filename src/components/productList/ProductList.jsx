@@ -4,7 +4,7 @@ import { useState } from "react";
 import foewardArrow from "../../assets/icons/ForwardArrow.png";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
-import ProductPage from "../productDetail/ProductPage";
+import ProductPage from "../../pages/productDetail/ProductPage";
 const ProductList = ({ data }) => {
   const [moreProduct, setMoreProduct] = useState(false);
   const { carts } = useSelector((state) => state.carts);

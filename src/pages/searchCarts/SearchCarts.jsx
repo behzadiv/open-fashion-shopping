@@ -4,7 +4,7 @@ import close from "../../assets/icons/Close.png";
 import { Navigate, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllProductsData } from "../feature/allProducts/allProductSlice";
+import { getAllProductsData } from "../../components/feature/allProducts/allProductSlice";
 const SearchCarts = () => {
   const { state } = useLocation(); //recieve state(allProducts)by navlink to our search function has hight speed
   const dispatch = useDispatch();

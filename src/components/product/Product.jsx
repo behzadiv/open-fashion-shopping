@@ -4,7 +4,6 @@ import "./Product.css";
 import trash from "../../assets/icons/trash.png"
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import ProductPage from "../productDetail/ProductPage";
 const Product = ({
   productImage,
   productTitle,

@@ -4,7 +4,7 @@ import profile from "../../assets/icons/profile.png";
 import logout from "../../assets/icons/logout.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useQuery } from "../../hooks/useQuery";
-import { setAuth } from "../feature/auth/authSlice";
+import { setAuth } from "../../components/feature/auth/authSlice";
 import { render, renderHook } from "@testing-library/react";
 const Profile = () => {
   const userData = useSelector((state) => state.auth.data);

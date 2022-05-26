@@ -1,8 +1,8 @@
-import Badge from "../common/Badge";
+import Badge from "../../common/Badge";
 import "./Footer.css"
-import twitter from "../assets/icons/Twitter.png";
-import youtube from "../assets/icons/YouTube.png";
-import instagram from "../assets/icons/Instagram.png";
+import twitter from "../../assets/icons/Twitter.png";
+import youtube from "../../assets/icons/YouTube.png";
+import instagram from "../../assets/icons/Instagram.png";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {

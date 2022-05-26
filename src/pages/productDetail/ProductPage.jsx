@@ -7,13 +7,13 @@ import dontBleach from "../../assets/icons/Do Not Bleach.png";
 import dontDry from "../../assets/icons/Do Not Tumble Dry.png";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCarts, decrementCart } from "../feature/cart/cartsSlice";
+import { addToCarts, decrementCart } from "../../components/feature/cart/cartsSlice";
 import trash from "../../assets/icons/trash.png";
 import close from "../../assets/icons/Close.png";
-import { getAllProductsData } from "../feature/allProducts/allProductSlice";
-import Product from "../product/Product";
+import { getAllProductsData } from "../../components/feature/allProducts/allProductSlice";
+import Product from "../../components/product/Product";
 import Badge from "../../common/Badge";
-import Loading from "../loading/Loading";
+import Loading from "../../components/loading/Loading";
 const ProductPage = () => {
   const carts = useSelector((state) => state.carts.carts);
   const dispatch = useDispatch();

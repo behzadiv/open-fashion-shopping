@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Badge from "../../common/Badge";
-import HomePage from "../HomePage";
+import HomePage from "../homepage/HomePage";
 import "./OpenFashionApp.css";
 import Prada from "../../assets/brands/Prada.png";
 import Burberry from "../../assets/brands/Burberry.png";
@@ -8,7 +8,7 @@ import Catier from "../../assets/brands/Catier.png";
 import Gucci from "../../assets/brands/Gucci.png";
 import Boss from "../../assets/brands/Boss.png";
 import Tiffany from "../../assets/brands/Tiffany.png";
-import JustForYou from "../justForYou/JustForYou";
+import JustForYou from "../../components/justForYou/JustForYou";
 import collection1 from "../../assets/collection1.png";
 import sticker1 from "../../assets/MiroodlesSticker1.png";
 import sticker2 from "../../assets/MiroodlesSticker2.png";
@@ -22,7 +22,7 @@ import group4 from "../../assets/group/group4.png";
 import groupinstagramlogo from "../../assets/group/groupInstagram.png";
 import logo from "../../assets/Logo2.png";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProductsData } from "../feature/allProducts/allProductSlice";
+import { getAllProductsData } from "../../components/feature/allProducts/allProductSlice";
 const OpenFashionApp = () => {
   const [category, setCategory] = useState("");
   const selectCategory = (e) => {
