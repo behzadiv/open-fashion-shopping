@@ -31,7 +31,7 @@ const SearchCarts = () => {
     <section className="search-container container">
       <div className="search-header container">
         <input
-          type="text"
+          type=""
           placeholder="Search items"
           onChange={(e) => changeHandler(e)}
         />

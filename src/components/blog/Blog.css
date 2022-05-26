@@ -21,6 +21,7 @@
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.6rem;
+  cursor: pointer;
 }
 .blogs-container {
   display: flex;
@@ -121,6 +122,10 @@
    align-items: center;
    border: 1px solid #DEDEDE;
    gap: 2rem;
+   cursor: pointer;
+}
+.blog-more:hover{
+  background-color: #fcfcfc;
 }
 @media screen and (min-width:500px) {
   .blog-tags{
